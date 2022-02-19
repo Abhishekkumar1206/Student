@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<center><h1>Student Details</h1></center>
+<table>
+    
+        <th>Student Number</th>
+        <th>Student Name</th>
+        <th>Student ID</th>
+        <th>Student Address</th>
+    
+
+    <tr>
+      {% for student in stu_list %}
+    
+      
+          <td>{{student.stuNo}}</td>
+          <td>{{student.stuName}}</td>
+          <td>{{student.stuId}}</td>
+          <td>{{student.stuAddress}}</td>
+          <td><a href="/update/{{student.id}}"><button>Update</button></a> <a href="/delete/{{student.id}}"><button>Delete</button></a></td>
+        </tr>
+      {% endfor %}
+   
+      </table>
+      <br><br>
+      <a href="/create"><button type="button">Add New Student</button></a>
+{% endblock %}
